@@ -1,0 +1,14 @@
+Node.js is installed, version: v22.11.0
+npm is installed, version: 10.9.0
+npm install has been run before.
+Table created successfully.
+Inserting user `Alice`...
+User `Alice` inserted successfully.
+Inserting user `Alice` again...
+Transaction rolled back due to error: UNIQUE constraint failed: users.name
+Inserting user `Bob`...
+User `Bob` inserted successfully.
+Inserting user `Bob` again...
+Transaction rolled back due to error: UNIQUE constraint failed: users.name
+Users in the database: [ { id: 1, name: 'Bob' } ]
+Database connection closed.

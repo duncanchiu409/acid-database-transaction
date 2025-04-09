@@ -1,0 +1,22 @@
+{
+  "name": "acid-database-transaction",
+  "version": "1.0.0",
+  "description": "An example demonstrating usage for ACID Database Transaction on sqlite with node.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npx tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Duncan Chiu",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.2",
+  "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.14.0",
+    "better-sqlite3": "^11.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {}
+}
