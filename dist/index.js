@@ -32,6 +32,25 @@ catch (error) {
     console.log('Transaction rolled back due to error:', errorMessage);
 }
 try {
+    // Start implicit transactions
+    console.log('Inserting user `Candice`...');
+    insert_user_stmt.run('Candice');
+    console.log('User `Candice` inserted successfully.');
+    // Commit the transaction
+    db.exec('COMMIT;');
+    // Attempt to insert a duplicate user to trigger an error
+    console.log('Inserting user `Candice` again...');
+    insert_user_stmt.run('Candice'); // This will cause a UNIQUE constraint violation
+    console.log('User `Candice` inserted again successfully.'); // This line will not be executed
+    // Commit the transaction
+    db.exec('COMMIT;');
+}
+catch (error) {
+    // If an error occurs, roll back the transaction
+    const errorMessage = error.message;
+    console.log('Transaction rolled back due to error:', errorMessage);
+}
+try {
     // Start autocommit transactions
     console.log('Inserting user `Bob`...');
     insert_user_stmt.run('Bob');
